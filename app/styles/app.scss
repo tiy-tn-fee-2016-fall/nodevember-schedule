@@ -24,6 +24,15 @@ ul {
   box-sizing: border-box;
 }
 
+@function invert {
+  @return #{ "invert()" };
+}
+
+.logo {
+  text-align: center;
+  filter: invert();
+}
+
 .ember-burger-menu {
   .bm-outlet > .bm-content {
     background: #111;
@@ -122,11 +131,12 @@ ul {
 }
 
 .section {
-  padding: 1rem;
+  padding: 1rem 2rem 2rem;
 }
 
 .row {
   display: flex;
+  margin: 0 -1rem;
 
   &__item {
     margin: 1rem;

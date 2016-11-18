@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    apiUrl: 'http://cors-anywhere.herokuapp.com/https://1icnc0uy38.execute-api.us-east-1.amazonaws.com/prod/nodevemberSchedule',
+    apiUrl: 'https://cors-anywhere.herokuapp.com/https://1icnc0uy38.execute-api.us-east-1.amazonaws.com/prod/nodevemberSchedule',
     modulePrefix: 'nodevember',
     environment: environment,
     rootURL: '/',
