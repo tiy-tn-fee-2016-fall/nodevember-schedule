@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    api: 'https://1icnc0uy38.execute-api.us-east-1.amazonaws.com/prod/nodevemberSchedule',
     modulePrefix: 'nodevember',
     environment: environment,
     rootURL: '/',

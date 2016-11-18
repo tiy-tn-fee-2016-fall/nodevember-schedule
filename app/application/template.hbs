@@ -1,0 +1,27 @@
+{{#burger-menu animation="scale-rotate" as |burger|}}
+  {{#burger.menu itemTagName="li" as |menu|}}
+    <a {{action burger.state.actions.toggle}} class="close fa fa-times"></a>
+    <ul>
+      {{#menu.item}}
+        {{#link-to 'index'}}Features{{/link-to}}
+      {{/menu.item}}
+
+      {{#menu.item}}
+        {{#link-to 'index'}}About{{/link-to}}
+      {{/menu.item}}
+
+      {{#menu.item}}
+        {{#link-to 'index'}}Contact Us{{/link-to}}
+      {{/menu.item}}
+    </ul>
+  {{/burger.menu}}
+
+  {{#burger.outlet}}
+    <div class="section">
+      <div class="row">
+        <a {{action burger.state.actions.toggle}} class="fa fa-bars"></a>
+      </div>
+      {{outlet}}
+    </div>
+  {{/burger.outlet}}
+{{/burger-menu}}
