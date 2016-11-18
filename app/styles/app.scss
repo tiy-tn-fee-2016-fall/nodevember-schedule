@@ -1,4 +1,4 @@
-$accent-color: #e24b31;
+$accent-color: #007a58;
 $text-color: #e2e2e2;
 
 html,
@@ -15,9 +15,18 @@ body > .ember-view {
   color: $text-color;
 }
 
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .ember-burger-menu {
   .bm-outlet > .bm-content {
-    background: #1d2837;
+    background: #111;
   }
 
   .bm-menu {
@@ -118,4 +127,90 @@ body > .ember-view {
 
 .row {
   display: flex;
+
+  &__item {
+    margin: 1rem;
+    flex-grow: 1;
+
+    &--time {
+      flex-basis: 20%;
+      flex-grow: 0;
+    }
+  }
+
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+
+    &__item {
+      flex-basis: calc(50% - 2rem);
+    }
+
+    &__item--time {
+      flex-basis: 100%;
+    }
+  }
+
+  @media (max-width: 460px) {
+    flex-direction: column;
+  }
+}
+
+.card {
+  padding: 0.5rem;
+  border: 0.1rem solid white;
+  border-radius: 0.4rem;
+  text-align: center;
+  cursor: pointer;
+
+  &--time {
+    background: $accent-color;
+  }
+
+  &:hover {
+    background: lighten($accent-color, 10%);
+    color: #111;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 1;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(#000, 0.8);
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 60rem;
+  margin: 2rem;
+  background: #eee;
+  color: #111;
+  padding: 1rem;
+
+  &__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    opacity: 0.4;
+    padding: 0.5rem;
+
+    cursor: pointer;
+  }
+}
+
+.close {
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem;
 }

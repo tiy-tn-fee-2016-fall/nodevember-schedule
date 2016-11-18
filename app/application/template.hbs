@@ -1,4 +1,4 @@
-{{#burger-menu animation="scale-rotate" as |burger|}}
+{{#burger-menu as |burger|}}
   {{#burger.menu itemTagName="li" as |menu|}}
     <a {{action burger.state.actions.toggle}} class="close fa fa-times"></a>
     <ul>
@@ -19,7 +19,7 @@
   {{#burger.outlet}}
     <div class="section">
       <div class="row">
-        <a {{action burger.state.actions.toggle}} class="fa fa-bars"></a>
+        {{!-- <a {{action burger.state.actions.toggle}} class="close fa fa-bars"></a> --}}
       </div>
       {{outlet}}
     </div>

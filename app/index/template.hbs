@@ -1,0 +1,41 @@
+<ul>
+  {{#each model as |day|}}
+    <li>
+      <h2>{{day.title}}</h2>
+
+
+      {{#each-in (group-by "time" day.slots) as |time talks|}}
+        <ul class="row">
+          <li class="row__item row__item--time">
+            <div class="card card--time">
+              <h3>{{time}}</h3>
+            </div>
+          </li>
+          {{#each talks as |talk|}}
+            <li class="row__item" {{action "showTalk" talk}}>
+              <div class="card">
+                <h3>{{talk.speaker}}</h3>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      {{/each-in}}
+    </li>
+  {{/each}}
+</ul>
+
+{{#if talkDetails}}
+  <div class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-card__close" {{action "close"}}>
+        <div class="fa fa-close"></div>
+      </div>
+      <div class="talk-detail">
+        <h2 class="talk-detail__title">{{talkDetails.title}} / {{talkDetails.speaker}}</h2>
+        <h3 class="talk-detail__time">{{talkDetails.room}} - {{talkDetails.time}}</h3>
+
+        <p>{{talkDetails.summary}}</p>
+      </div>
+    </div>
+  </div>
+{{/if}}
