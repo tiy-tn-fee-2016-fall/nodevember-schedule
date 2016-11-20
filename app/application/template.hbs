@@ -1,30 +1,9 @@
-{{#burger-menu as |burger|}}
-  {{#burger.menu itemTagName="li" as |menu|}}
-    <a {{action burger.state.actions.toggle}} class="close fa fa-times"></a>
-    <ul>
-      {{#menu.item}}
-        {{#link-to 'index'}}Features{{/link-to}}
-      {{/menu.item}}
-
-      {{#menu.item}}
-        {{#link-to 'index'}}About{{/link-to}}
-      {{/menu.item}}
-
-      {{#menu.item}}
-        {{#link-to 'index'}}Contact Us{{/link-to}}
-      {{/menu.item}}
-    </ul>
-  {{/burger.menu}}
-
-  {{#burger.outlet}}
-    <div class="section">
-      <div class="logo">
-        <img src="http://nodevember.org/img/logo-dark.png" alt="">
-      </div>
-      <div class="row">
-        {{!-- <a {{action burger.state.actions.toggle}} class="close fa fa-bars"></a> --}}
-      </div>
-      {{outlet}}
-    </div>
-  {{/burger.outlet}}
-{{/burger-menu}}
+<div class="section">
+  <div class="logo">
+    <img src="http://nodevember.org/img/logo-dark.png" alt="">
+  </div>
+  <div class="row">
+    {{!-- <a {{action burger.state.actions.toggle}} class="close fa fa-bars"></a> --}}
+  </div>
+  {{outlet}}
+</div>
